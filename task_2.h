@@ -35,6 +35,13 @@ Matrix MultiplyMatrix(std::vector<std::vector<double>> first, std::vector<std::v
 void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<double> values) {
     Matrix U_matrix(original_matrix);
     size_t size = U_matrix.Size();
+    std::vector<std::vector<double>> L_vectors;
+    L_vectors.resize(size);
+    for(int j = 0; j < size; ++j) {
+        L_vectors[j].resize(size);
+    }
+    Matrix L_matrix(L_vectors);
+
     std::vector<std::vector<double>> P_vectors;
     P_vectors.resize(size);
     for(int j = 0; j < size; ++j) {
@@ -44,16 +51,6 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<doubl
         }
     }
     Matrix P_matrix(P_vectors);
-
-    std::vector<std::vector<double>> L_vectors;
-    L_vectors.resize(size);
-    for(int j = 0; j < size; ++j) {
-        L_vectors[j].resize(size);
-        for(int i = 0; i < size; ++i) {
-            if(i == j) { L_vectors[j][i] = 1; }
-        }
-    }
-    Matrix L_matrix(L_vectors);
 
     for(size_t i = 0; i < U_matrix.Size(); ++i) {
         double max = fabs(U_matrix.Get()[i][i]);
@@ -67,16 +64,16 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<doubl
         if(the_number_of_line != i) {
             U_matrix.SwapTwoLines(i, the_number_of_line);
             P_matrix.SwapTwoLines(i, the_number_of_line);
+            L_matrix.SwapTwoLines(i, the_number_of_line);
         }
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
             double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
             U_matrix.LinesSubstraction(j, i, factor);
             L_matrix.SetElement(j, i, factor);
         }
+        L_matrix.SetElement(i, i, 1);
     }
-    std::cout << L_matrix << U_matrix << P_matrix;
-
-
+    std::cout << P_matrix << L_matrix << U_matrix;
 }
 
 #endif //LABARATORNAYA1_TASK_2_H
