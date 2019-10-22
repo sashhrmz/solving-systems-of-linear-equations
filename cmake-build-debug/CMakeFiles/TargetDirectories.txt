@@ -1,0 +1,3 @@
+/home/sasha/Sasha/University/VMA/labaratornaya1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sasha/Sasha/University/VMA/labaratornaya1/cmake-build-debug/CMakeFiles/labaratornaya1.dir
+/home/sasha/Sasha/University/VMA/labaratornaya1/cmake-build-debug/CMakeFiles/edit_cache.dir
