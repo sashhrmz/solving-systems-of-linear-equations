@@ -30,6 +30,9 @@ void Task_1(std::vector<std::vector<double>>& original_matrix) {
             matrix.SwapTwoLines(i, i - 1);
             result_matrix.SwapTwoLines(i, i - 1);
         }
+        if(matrix.Get()[i - 1][i] == 0) {
+            continue;
+        }
           double factor = (matrix.Get()[i - 1][i]) / (matrix.Get()[i][i]);
           matrix.LineMultiply(factor, i);
           result_matrix.LineMultiply(factor, i);
@@ -43,7 +46,7 @@ void Task_1(std::vector<std::vector<double>>& original_matrix) {
             if(matrix.Get()[j][i] == 0) {
                 continue;
             }
-            double factor = matrix.Get()[j][i]/matrix.Get()[i][i];
+            double factor = matrix.Get()[j][i] / matrix.Get()[i][i];
             matrix.LineMultiply(factor, i);
             result_matrix.LineMultiply(factor, i);
 
@@ -51,7 +54,6 @@ void Task_1(std::vector<std::vector<double>>& original_matrix) {
             result_matrix.LinesSubstraction(j, i);
         }
         double to_unit = matrix.Get()[i][i];
-       // matrix.DivideElement(to_unit, i, i);
         result_matrix.DivideElement(to_unit, i, i);
     }
 
