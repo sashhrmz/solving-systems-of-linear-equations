@@ -43,10 +43,11 @@ public:
         std::vector<double> row2 =  {-5, 2, 2, -1};
         std::vector<double> row3 =  {-3, 2, -2, 3};
         std::vector<double> row4 =  {1, -1, 4, -1};
+        std::vector<double> value = {3, -3, -5, 5};
         std::vector<double> row5 =  {4, 1, 5, 3, 1};
 
         std::vector<std::vector<double>> matrix = {row1, row2, row3, row4};
-        Task_2(matrix);
+        Task_2(matrix, value);
 
     }
 };
