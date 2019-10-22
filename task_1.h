@@ -40,7 +40,9 @@ void Task_1(std::vector<std::vector<double>>& original_matrix) {
 
     for(size_t i = 0; i < matrix.Size(); ++i) {
         for(size_t j = i + 1; j < matrix.Size(); ++j) {
-
+            if(matrix.Get()[j][i] == 0) {
+                continue;
+            }
             double factor = matrix.Get()[j][i]/matrix.Get()[i][i];
             matrix.LineMultiply(factor, i);
             result_matrix.LineMultiply(factor, i);

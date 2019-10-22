@@ -64,11 +64,10 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<doubl
                 the_number_of_line = j;
             }
         }
-//        if(the_number_of_line != i) {
-//            U_matrix.SwapTwoLines(i, the_number_of_line);
-//            P_matrix.SwapTwoLines(i, the_number_of_line);
-//
-//        }
+        if(the_number_of_line != i) {
+            U_matrix.SwapTwoLines(i, the_number_of_line);
+            P_matrix.SwapTwoLines(i, the_number_of_line);
+        }
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
             double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
             U_matrix.LinesSubstraction(j, i, factor);
@@ -76,6 +75,7 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<doubl
         }
     }
     std::cout << L_matrix << U_matrix << P_matrix;
+
 
 }
 
