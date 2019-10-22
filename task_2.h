@@ -39,15 +39,15 @@ void Task_2(std::vector<std::vector<double>>& original_matrix) {
                 the_number_of_line = j;
             }
         }
-        if(the_number_of_line != i) {
-            U_matrix.SwapTwoLines(i, the_number_of_line);
-            P_matrix.SwapTwoLines(i, the_number_of_line);
-        }
+//        if(the_number_of_line != i) {
+//            U_matrix.SwapTwoLines(i, the_number_of_line);
+//            P_matrix.SwapTwoLines(i, the_number_of_line);
+//
+//        }
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
             double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
             U_matrix.LinesSubstraction(j, i, factor);
             L_matrix.SetElement(j, i, factor);
-            std::cout << L_matrix << U_matrix;
         }
     }
     std::cout << L_matrix << U_matrix << P_matrix;

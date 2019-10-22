@@ -9,6 +9,7 @@
 #include <iostream>
 #include <istream>
 #include <cmath>
+#include <algorithm>
 
 class Matrix {
 
@@ -51,6 +52,12 @@ public:
     void DivideElement(double divider, size_t dividend_line, size_t dividend_col) { matrix_[dividend_line][dividend_col] /= divider; }
 
     void SwapTwoLines(size_t lhs_line, size_t rhs_line) { matrix_[lhs_line].swap(matrix_[rhs_line]); }
+
+    void SwapTwoElements(size_t lhs_line, size_t lhs_row, size_t rhs_line, size_t rhs_row) {
+        double temp = matrix_[lhs_line][lhs_row];
+        matrix_[lhs_line][lhs_row] = matrix_[rhs_line][rhs_row];
+        matrix_[rhs_line][rhs_row] = temp;
+    }
 
     void SetElement(size_t line, size_t row, double value) { matrix_[line][row] = value; }
 

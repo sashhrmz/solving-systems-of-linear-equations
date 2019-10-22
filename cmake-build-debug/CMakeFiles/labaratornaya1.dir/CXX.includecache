@@ -19,6 +19,8 @@ istream
 -
 cmath
 -
+algorithm
+-
 
 /home/sasha/Sasha/University/VMA/labaratornaya1/task_1.h
 matrix.h
