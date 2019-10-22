@@ -31,10 +31,10 @@ void Task_2(std::vector<std::vector<double>>& original_matrix) {
     Matrix L_matrix(L_vectors);
 
     for(size_t i = 0; i < U_matrix.Size(); ++i) {
-        double max = U_matrix.Get()[i][i];
+        double max = fabs(U_matrix.Get()[i][i]);
         size_t the_number_of_line = i;
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
-            if(max < U_matrix.Get()[j][i]) {
+            if(max < fabs(U_matrix.Get()[j][i])) {
                 max = U_matrix.Get()[j][i];
                 the_number_of_line = j;
             }
@@ -45,9 +45,9 @@ void Task_2(std::vector<std::vector<double>>& original_matrix) {
         }
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
             double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
-            U_matrix.LineMultiply(factor, i);
-            U_matrix.LinesSubstraction(j, i);
-            L_matrix.SetElement(j, i, (-factor));
+            U_matrix.LinesSubstraction(j, i, factor);
+            L_matrix.SetElement(j, i, factor);
+            std::cout << L_matrix << U_matrix;
         }
     }
     std::cout << L_matrix << U_matrix << P_matrix;
