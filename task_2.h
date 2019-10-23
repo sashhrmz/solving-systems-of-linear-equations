@@ -7,31 +7,6 @@
 
 #include "matrix.h"
 
-Matrix MultiplyMatrix(std::vector<std::vector<double>> first, std::vector<std::vector<double>> second) {
-    std::vector<std::vector<double>> matrix;
-    for(int i = 0; i < first.size(); ++i) {
-        if(second.size() != first[i].size()) {
-            Matrix res(matrix);
-            return res;
-        }
-    }
-    for(size_t i = 0; i < first.size(); ++i) {
-        std::vector<double> line;
-        for(size_t j = 0; j < second[0].size(); j++) {
-            double t = 0;
-            for(size_t k = 0; k < second.size(); ++k) {
-                t += first[i][k] * second[k][j];
-            }
-            line.push_back(t);
-            t = 0;
-        }
-        matrix.push_back(line);
-        line.clear();
-    }
-    Matrix result(matrix);
-    return result;
-}
-
 void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<std::vector<double>> values) {
     Matrix U_matrix(original_matrix);
     Matrix value_matrix(values);
@@ -59,7 +34,7 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<std::
         size_t the_number_of_line = i;
         for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
             if(max < fabs(U_matrix.Get()[j][i])) {
-                max = U_matrix.Get()[j][i];
+                max = fabs(U_matrix.Get()[j][i]);
                 the_number_of_line = j;
             }
         }
@@ -101,7 +76,6 @@ void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<std::
         U_matrix.DivideElement(to_unit, static_cast<size_t>(i), static_cast<size_t>(i));
         value_matrix.LineMultiply((1 / to_unit), static_cast<size_t>(i));
     }
-    std::cout << U_matrix << value_matrix;
 }
 
 #endif //LABARATORNAYA1_TASK_2_H
