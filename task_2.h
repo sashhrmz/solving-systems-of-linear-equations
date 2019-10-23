@@ -7,74 +7,70 @@
 
 #include "matrix.h"
 
-void Task_2(std::vector<std::vector<double>>& original_matrix, std::vector<std::vector<double>> values) {
-    Matrix U_matrix(original_matrix);
-    Matrix value_matrix(values);
+void Task_2(std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
 
-    size_t size = U_matrix.Size();
-    std::vector<std::vector<double>> L_vectors;
-    L_vectors.resize(size);
-    for(int j = 0; j < size; ++j) {
-        L_vectors[j].resize(size);
+    U_matrix.size();
+    std::vector<std::vector<double>> L_matrix;
+    L_matrix.resize(U_matrix.size());
+    for(int j = 0; j < U_matrix.size(); ++j) {
+        L_matrix[j].resize(U_matrix.size());
     }
-    Matrix L_matrix(L_vectors);
 
-    std::vector<std::vector<double>> P_vectors;
-    P_vectors.resize(size);
-    for(int j = 0; j < size; ++j) {
-        P_vectors[j].resize(size);
-        for(int i = 0; i < size; ++i) {
-            if(i == j) { P_vectors[j][i] = 1; }
-        }
+    std::vector<std::vector<double>> P_matrix;
+    P_matrix.resize(U_matrix.size());
+    for(int j = 0; j < U_matrix.size(); ++j) {
+        P_matrix[j].resize(U_matrix.size());
+        P_matrix[j][j] = 1;
     }
-    Matrix P_matrix(P_vectors);
 
-    for(size_t i = 0; i < U_matrix.Size(); ++i) {
-        double max = fabs(U_matrix.Get()[i][i]);
+    for(size_t i = 0; i < U_matrix.size(); ++i) {
+        double max = fabs(U_matrix[i][i]);
         size_t the_number_of_line = i;
-        for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
-            if(max < fabs(U_matrix.Get()[j][i])) {
-                max = fabs(U_matrix.Get()[j][i]);
+        for(size_t j = i + 1; j < U_matrix.size(); ++j) {
+            if(max < fabs(U_matrix[j][i])) {
+                max = fabs(U_matrix[j][i]);
                 the_number_of_line = j;
             }
         }
         if(the_number_of_line != i) {
-            U_matrix.SwapTwoLines(i, the_number_of_line);
-            P_matrix.SwapTwoLines(i, the_number_of_line);
-            L_matrix.SwapTwoLines(i, the_number_of_line);
-            value_matrix.SwapTwoLines(i, the_number_of_line);
+            U_matrix[i].swap(U_matrix[the_number_of_line]);
+            P_matrix[i].swap(P_matrix[the_number_of_line]);
+            L_matrix[i].swap(L_matrix[the_number_of_line]);
+            values[i].swap(values[the_number_of_line]);
         }
-        for(size_t j = i + 1; j < U_matrix.Size(); ++j) {
-            double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
-            U_matrix.LinesSubstraction(j, i, factor);
-            L_matrix.SetElement(j, i, factor);
+        for(size_t j = i + 1; j < U_matrix.size(); ++j) {
+            double factor = U_matrix[j][i] / U_matrix[i][i];
+            LinesSubstraction(U_matrix, j, i, factor);
+            L_matrix[j][i] = factor;
         }
-        L_matrix.SetElement(i, i, 1);
+        L_matrix[i][i] =  1;
     }
 
-    for(size_t i = 0; i < L_matrix.Size(); ++i) {
-        for(size_t j = i + 1; j < L_matrix.Size(); ++j) {
-            if(L_matrix.Get()[j][i] == 0) {
+    for(size_t i = 0; i < L_matrix.size(); ++i) {
+        for(size_t j = i + 1; j < L_matrix.size(); ++j) {
+            if(L_matrix[j][i] == 0) {
                 continue;
             }
-            double factor = L_matrix.Get()[j][i];
-            L_matrix.LinesSubstraction(j, i, factor);
-            value_matrix.LinesSubstraction(j, i, factor);
+            double factor = L_matrix[j][i];
+            LinesSubstraction(L_matrix, j, i, factor);
+            LinesSubstraction(values, j, i, factor);
         }
     }
 
-    for(int i = static_cast<int>(U_matrix.Size() - 1); i >= 0; --i) {
+    for(int i = static_cast<int>(U_matrix.size() - 1); i >= 0; --i) {
         for(int j = i - 1; j >= 0; --j) {
-            if(U_matrix.Get()[j][i] == 0) {
+            if(U_matrix[j][i] == 0) {
                 continue;
             }
-            double factor = U_matrix.Get()[j][i] / U_matrix.Get()[i][i];
-            U_matrix.LinesSubstraction(static_cast<size_t>(j), static_cast<size_t>(i), factor);
-            value_matrix.LinesSubstraction(static_cast<size_t>(j), static_cast<size_t>(i), factor);
+            double factor = U_matrix[j][i] / U_matrix[i][i];
+            LinesSubstraction(U_matrix, static_cast<size_t>(j), static_cast<size_t>(i), factor);
+            LinesSubstraction(values, static_cast<size_t>(j), static_cast<size_t>(i), factor);
         }
-        double to_unit = U_matrix.Get()[i][i];
-        U_matrix.DivideElement(to_unit, static_cast<size_t>(i), static_cast<size_t>(i));
-        value_matrix.LineMultiply((1 / to_unit), static_cast<size_t>(i));
+        double to_unit = U_matrix[i][i];
+        U_matrix[i][i] /= to_unit;
+        for(auto& element : values[i]) {
+            element *= to_unit;
+        }
     }
 }
 

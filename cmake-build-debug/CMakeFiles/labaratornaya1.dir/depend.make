@@ -7,6 +7,3 @@ CMakeFiles/labaratornaya1.dir/main.cpp.o: ../task_1.h
 CMakeFiles/labaratornaya1.dir/main.cpp.o: ../task_2.h
 CMakeFiles/labaratornaya1.dir/main.cpp.o: ../test.h
 
-CMakeFiles/labaratornaya1.dir/matrix.cpp.o: ../matrix.cpp
-CMakeFiles/labaratornaya1.dir/matrix.cpp.o: ../matrix.h
-

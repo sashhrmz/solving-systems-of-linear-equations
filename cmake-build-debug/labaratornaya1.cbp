@@ -87,9 +87,6 @@
 		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/main.cpp">
 			<Option target="labaratornaya1"/>
 		</Unit>
-		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/matrix.cpp">
-			<Option target="labaratornaya1"/>
-		</Unit>
 		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/matrix.h">
 			<Option target="labaratornaya1"/>
 		</Unit>

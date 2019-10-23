@@ -11,6 +11,13 @@
 #include <cmath>
 #include <algorithm>
 
+void LinesSubstraction(std::vector<std::vector<double>>& matrix_, size_t the_number_of_minued_line,
+                       size_t the_number_of_subtrahend_line, double the_multiplied_number = 1) {
+    for(size_t i = 0; i < std::min(matrix_[the_number_of_minued_line].size(), matrix_[the_number_of_subtrahend_line].size()); ++i) {
+        matrix_[the_number_of_minued_line][i] -= the_multiplied_number * matrix_[the_number_of_subtrahend_line][i];
+    }
+}
+
 class Matrix {
 
 public:
@@ -43,11 +50,11 @@ public:
         }
     }
 
-    void LinesSubstraction(size_t the_number_of_minued_line, size_t the_number_of_subtrahend_line, double the_multiplied_number = 1) {
-        for(size_t i = 0; i < std::min(matrix_[the_number_of_minued_line].size(), matrix_[the_number_of_subtrahend_line].size()); ++i) {
-            matrix_[the_number_of_minued_line][i] -= the_multiplied_number * matrix_[the_number_of_subtrahend_line][i];
-        }
-    }
+//    void LinesSubstraction(size_t the_number_of_minued_line, size_t the_number_of_subtrahend_line, double the_multiplied_number = 1) {
+//        for(size_t i = 0; i < std::min(matrix_[the_number_of_minued_line].size(), matrix_[the_number_of_subtrahend_line].size()); ++i) {
+//            matrix_[the_number_of_minued_line][i] -= the_multiplied_number * matrix_[the_number_of_subtrahend_line][i];
+//        }
+//    }
 
     void DivideElement(double divider, size_t dividend_line, size_t dividend_col) { matrix_[dividend_line][dividend_col] /= divider; }
 
