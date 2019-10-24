@@ -1,0 +1,55 @@
+\documentclass[11pt,twoside]{article}
+\setlength{\textwidth}{166mm}   % ширина текста
+\setlength{\textheight}{240mm}  % высота текста на странице
+\setlength{\topmargin}{-10mm}   % верхнее поле (+ 1 дюйм)
+\setlength{\headsep}{5mm}       % отступ после колонтитула
+\oddsidemargin=3mm              % левое поле для нечетной страницы (+1 дюйм)
+\evensidemargin=3mm             % левое поле для четной страницы (+1 дюйм)
+\setlength{\baselineskip}{18pt} %
+\usepackage[cp866]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{epsfig}
+\usepackage{mathrsfs}
+\usepackage[top=1cm, left=1cm, right=1cm, bottom=1cm]{geometry}
+\renewcommand\le{\leqslant}
+\renewcommand\ge{\geqslant}
+
+\renewenvironment{itemize}
+{\begin{list}
+             {\labelitemi}%                     Old parameters:
+             {\setlength{\labelwidth}{1.3em}%        1em
+              \setlength{\labelsep}{0.7em}%        0.7em
+              \setlength{\itemindent}{0em}%          0em
+              \setlength{\listparindent}{3em}%       3em
+              \setlength{\leftmargin}{3em}%          3em !
+              \setlength{\rightmargin}{0em}%         0em
+              \setlength{\parsep}{0ex}%              0ex
+              \setlength{\topsep}{0.5ex}%            2ex !
+              \setlength{\itemsep}{0ex}%             0ex
+             }%
+}
+{\end{list}}%
+
+\newcounter{enumnoo}
+\renewenvironment{enumerate}
+{\begin{list}
+             {\arabic{enumnoo}.}%
+             {\usecounter{enumnoo}%            Old parameters:
+              \setlength{\labelwidth}{2em}%          2em
+              \setlength{\labelsep}{0.7em}%        0.7em
+              \setlength{\itemindent}{0em}%          0em
+              \setlength{\listparindent}{3em}%       3em
+              \setlength{\leftmargin}{3.55em}%       3em !
+              \setlength{\rightmargin}{0em}%         0em
+              \setlength{\parsep}{0ex}%              0ex
+              \setlength{\topsep}{1ex}%              2ex !
+              \setlength{\itemsep}{0ex}%             0ex
+             }%
+}
+{\end{list}}%
+
+
+\begin{document}
+Report
+\end{document}

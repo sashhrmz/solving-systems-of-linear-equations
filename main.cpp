@@ -7,7 +7,7 @@ int main() {
     std::cout << std::endl;
 
     std::cout << "SECOND TASK" << std::endl;
-    test.TestSecondTask();
+    test.TestSecondTask(false);
     std::cout << std::endl;
 
     return 0;

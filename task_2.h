@@ -7,22 +7,8 @@
 
 #include "matrix.h"
 
-void Task_2(std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
-
-    U_matrix.size();
-    std::vector<std::vector<double>> L_matrix;
-    L_matrix.resize(U_matrix.size());
-    for(int j = 0; j < U_matrix.size(); ++j) {
-        L_matrix[j].resize(U_matrix.size());
-    }
-
-    std::vector<std::vector<double>> P_matrix;
-    P_matrix.resize(U_matrix.size());
-    for(int j = 0; j < U_matrix.size(); ++j) {
-        P_matrix[j].resize(U_matrix.size());
-        P_matrix[j][j] = 1;
-    }
-
+void Task_2(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<double>>& L_matrix,
+        std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
     for(size_t i = 0; i < U_matrix.size(); ++i) {
         double max = fabs(U_matrix[i][i]);
         size_t the_number_of_line = i;
@@ -52,7 +38,7 @@ void Task_2(std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<
                 continue;
             }
             double factor = L_matrix[j][i];
-            LinesSubstraction(L_matrix, j, i, factor);
+            //LinesSubstraction(L_matrix, j, i, factor);
             LinesSubstraction(values, j, i, factor);
         }
     }
@@ -63,11 +49,11 @@ void Task_2(std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<
                 continue;
             }
             double factor = U_matrix[j][i] / U_matrix[i][i];
-            LinesSubstraction(U_matrix, static_cast<size_t>(j), static_cast<size_t>(i), factor);
+            //LinesSubstraction(U_matrix, static_cast<size_t>(j), static_cast<size_t>(i), factor);
             LinesSubstraction(values, static_cast<size_t>(j), static_cast<size_t>(i), factor);
         }
         double to_unit = U_matrix[i][i];
-        U_matrix[i][i] /= to_unit;
+       // U_matrix[i][i] /= to_unit;
         for(auto& element : values[i]) {
             element *= to_unit;
         }
