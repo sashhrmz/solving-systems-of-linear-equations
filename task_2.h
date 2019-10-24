@@ -38,7 +38,6 @@ void Task_2(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<
                 continue;
             }
             double factor = L_matrix[j][i];
-            //LinesSubstraction(L_matrix, j, i, factor);
             LinesSubstraction(values, j, i, factor);
         }
     }
@@ -49,13 +48,11 @@ void Task_2(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<
                 continue;
             }
             double factor = U_matrix[j][i] / U_matrix[i][i];
-            //LinesSubstraction(U_matrix, static_cast<size_t>(j), static_cast<size_t>(i), factor);
             LinesSubstraction(values, static_cast<size_t>(j), static_cast<size_t>(i), factor);
         }
         double to_unit = U_matrix[i][i];
-       // U_matrix[i][i] /= to_unit;
         for(auto& element : values[i]) {
-            element *= to_unit;
+            element /= to_unit;
         }
     }
 }
