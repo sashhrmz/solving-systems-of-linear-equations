@@ -35,54 +35,67 @@ public:
             double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
             std::cout << i << " " << search_time << std::endl;
         }
-//
-//        std::vector<std::vector<double>> first_test =
-//                {{-3, 1, 0, 0},
-//                {0, 2, 5, 0},
-//                {-3, -4, -5, -2},
-//                {3, -2, 1, -1}};
-//        double start_time = clock();
-//
-//        std::vector<std::vector<double>> res = Task_1(first_test, );
-//
-//        double end_time = clock();
-//        double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-//
-//        std::cout << "first_test" << std::endl;
-//        for(auto& vec : res) {
-//            for(auto& el : vec) {
-//                std::cout << el << " ";
-//            }
-//            std::cout << std::endl;
-//        }
-//        std::cout << search_time << std::endl;
-//        std::vector<std::vector<double>> second_test = {
-//                {-5, -5, 0, 0, 0, 0, 0, 0, 0},
-//                {3, 3, 0, 0, 0, 0, 0, 0, 0},
-//                {-5, 0, -4, 5, 0, 0, 0, 0, 0},
-//                {-4, 2, -5, 4, 0, 0, 0, 0, 0},
-//                {-3, -4, 1, 4, -4, 3, 0, 0, 0},
-//                {-5, -3, 4, 2, 4, -2, 2, 0, 0},
-//                {4, 0, -1, -1, 3, 1, 6, -5, 0},
-//                {0, 2, 2, -5, -2, 0, 1, 3, -4},
-//                {-5, 3, -5, 3, 1, 0, -3, 1, -4}};
-//
-//        start_time = clock();
-//
-//        res = Task_1(second_test);
-//
-//        end_time = clock();
-//        search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-//
-//
-//        std::cout << "second_test" << std::endl;
-//        for(auto& vec : res) {
-//            for(auto& el : vec) {
-//                std::cout << el << " ";
-//            }
-//            std::cout << std::endl;
-//        }
-//        std::cout << search_time << std::endl;
+
+        std::vector<std::vector<double>> result_vectors_1;
+        result_vectors_1.resize(4);
+        for(size_t j = 0; j < 4; ++j) {
+            result_vectors_1[j].resize(4);
+            result_vectors_1[j][j] = 1;
+        }
+
+        std::vector<std::vector<double>> first_test =
+                {{-3, 1, 0, 0},
+                {0, 2, 5, 0},
+                {-3, -4, -5, -2},
+                {3, -2, 1, -1}};
+        double start_time = clock();
+
+        std::vector<std::vector<double>> res = Task_1(first_test, result_vectors_1);
+
+        double end_time = clock();
+        double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+
+        std::cout << "first_test" << std::endl;
+        for(auto& vec : res) {
+            for(auto& el : vec) {
+                std::cout << el << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << search_time << std::endl;
+        std::vector<std::vector<double>> result_vectors_2;
+        result_vectors_2.resize(4);
+        for(size_t j = 0; j < 9; ++j) {
+            result_vectors_2[j].resize(9);
+            result_vectors_2[j][j] = 1;
+        }
+        std::vector<std::vector<double>> second_test = {
+                {-5, -5, 0, 0, 0, 0, 0, 0, 0},
+                {3, 3, 0, 0, 0, 0, 0, 0, 0},
+                {-5, 0, -4, 5, 0, 0, 0, 0, 0},
+                {-4, 2, -5, 4, 0, 0, 0, 0, 0},
+                {-3, -4, 1, 4, -4, 3, 0, 0, 0},
+                {-5, -3, 4, 2, 4, -2, 2, 0, 0},
+                {4, 0, -1, -1, 3, 1, 6, -5, 0},
+                {0, 2, 2, -5, -2, 0, 1, 3, -4},
+                {-5, 3, -5, 3, 1, 0, -3, 1, -4}};
+
+        start_time = clock();
+
+        res = Task_1(second_test, result_vectors_2);
+
+        end_time = clock();
+        search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+
+
+        std::cout << "second_test" << std::endl;
+        for(auto& vec : res) {
+            for(auto& el : vec) {
+                std::cout << el << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << search_time << std::endl;
     }
 
     void TestSecondTask() {
