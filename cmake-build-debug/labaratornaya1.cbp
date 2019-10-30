@@ -96,6 +96,9 @@
 		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/task_2.h">
 			<Option target="labaratornaya1"/>
 		</Unit>
+		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/task_3.h">
+			<Option target="labaratornaya1"/>
+		</Unit>
 		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/test.h">
 			<Option target="labaratornaya1"/>
 		</Unit>

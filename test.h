@@ -7,6 +7,7 @@
 
 #include "task_1.h"
 #include "task_2.h"
+#include "task_3.h"
 
 class Test {
 public:
@@ -184,6 +185,32 @@ public:
                 Task_2(P_matrix, L_matrix, matrix_vector, result_vector);
             }
         }
+    }
+
+    void TestThirdTask() {
+        std::vector<std::vector<double>> U_matrix = {{1, 2, 3, 4},
+                                                     {2, 5, 6, 8},
+                                                     {3, 6, -1, -4},
+                                                     {4, 8, -4, 10}};
+
+        std::vector<std::vector<double>> LLT_matrix = {{1, 2, 3, 4},
+                                                       {2, 5, 6, 8},
+                                                       {3, 6, -1, -4},
+                                                       {4, 8, -4, 10}};
+        std::vector<size_t> D_matrix = {};
+        std::vector<std::vector<double>> P_matrix = {{1, 0, 0, 0},
+                                                     {0, 1, 0, 0},
+                                                     {0, 0, 1, 0},
+                                                     {0, 0, 0, 1}};
+        std::vector<std::vector<double>> L_matrix = {{0, 0, 0, 0},
+                                                     {0, 0, 0, 0},
+                                                     {0, 0, 0, 0},
+                                                     {0, 0, 0, 0}};
+        std::vector<std::vector<double>> values = {{5}, {10}, {-1}, {14}};
+
+        std::vector<std::vector<double>> values_for_LDLT = {{5}, {10}, {-1}, {14}};
+        Task_3(P_matrix, L_matrix, U_matrix, values, LLT_matrix, D_matrix, values_for_LDLT);
+        OutputPLUV(L_matrix, U_matrix, LLT_matrix, values);
     }
 
 private:
