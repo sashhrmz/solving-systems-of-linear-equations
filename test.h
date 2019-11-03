@@ -124,7 +124,7 @@ public:
             P_matrix[j][j] = 1;
         }
         Task_2(P_matrix, L_matrix, matrix, result_vector);
-        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
+//        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
         matrix = {{1, 1, 1, 1, 1, 1, 1, 1, 1},
                   {1, 2, 4, 8, 16, 32, 64, 128, 256},
                   {1, 3, 9, 27, 81, 243, 729, 2187, 6561},
@@ -149,7 +149,7 @@ public:
             P_matrix[j][j] = 1;
         }
         Task_2(P_matrix, L_matrix, matrix, result_vector);
-        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
+//        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
 
         //test plu with random matrix and solutions
        if(test_flag) {
@@ -188,33 +188,55 @@ public:
     }
 
     void TestThirdTask() {
-        std::vector<std::vector<double>> U_matrix = {{1, 2, 3, 4},
-                                                     {2, 5, 6, 8},
-                                                     {3, 6, -1, -4},
-                                                     {4, 8, -4, 10}};
+        std::vector<std::vector<size_t>> D_matrix = {{}};
 
-        std::vector<std::vector<double>> LLT_matrix = {{1, 2, 3, 4},
-                                                       {2, 5, 6, 8},
-                                                       {3, 6, -1, -4},
-                                                       {4, 8, -4, 10}};
-        std::vector<size_t> D_matrix = {};
-        std::vector<std::vector<double>> P_matrix = {{1, 0, 0, 0},
-                                                     {0, 1, 0, 0},
-                                                     {0, 0, 1, 0},
-                                                     {0, 0, 0, 1}};
-        std::vector<std::vector<double>> L_matrix = {{0, 0, 0, 0},
-                                                     {0, 0, 0, 0},
-                                                     {0, 0, 0, 0},
-                                                     {0, 0, 0, 0}};
-        std::vector<std::vector<double>> values = {{5}, {10}, {-1}, {14}};
+        for (size_t i = 100; i < 2001; i += 100) {
+            std::vector<std::vector<double>> LLT_matrix;
+            std::vector<std::vector<double>> U_matrix;
+            double temp;
+            std::vector<std::vector<double>> values1;
+            std::vector<std::vector<double>> values2;
+            std::vector<std::vector<double>> L1_matrix;
+            std::vector<std::vector<double>> L2_matrix;
+            std::vector<std::vector<double>> P_matrix;
+            values1.resize(i);
+            L1_matrix.resize(i);
+            L2_matrix.resize(i);
+            P_matrix.resize(i);
+            U_matrix.resize(i);
+            for(size_t k = 0; k < i; ++k) {
+                U_matrix[k].resize(i);
+            }
+            for (size_t j = 0; j < i; ++j) {
+                for (size_t k = j; k < i; ++k) {
+                    temp = rand() + 1;
+                    U_matrix[k][j] = temp;
+                    U_matrix[j][k] = temp;
+                }
+                L1_matrix[j].resize(i);
+                L2_matrix[j].resize(i);
+                P_matrix[j].resize(i);
+                P_matrix[j][j] = 1;
+                values1[j].push_back(rand() + 1);
+            }
+            LLT_matrix = U_matrix;
+            values2 = values1;
 
-        std::vector<std::vector<double>> values_for_LDLT = {{5}, {10}, {-1}, {14}};
-        Task_3(P_matrix, L_matrix, U_matrix, values, LLT_matrix, D_matrix, values_for_LDLT);
-        OutputPLUV(L_matrix, U_matrix, LLT_matrix, values);
+            double start_time = clock();
+            Task_3_LDLT(LLT_matrix, L1_matrix, D_matrix, values1);
+            double end_time = clock();
+            double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+            std::cout << "LDLT " <<  i << " " << search_time << " ";
+            start_time = clock();
+            Task_3_LU(P_matrix, L2_matrix, U_matrix, values2);
+            end_time = clock();
+            search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+            std::cout << "LU " <<  i << " " << search_time << std::endl;
+        }
     }
 
 private:
-    void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<double>>& L_matrix,
+    void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<size_t>>& L_matrix,
                     std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
         std::cout << "P matrix : " << std::endl;
         for(auto vec : P_matrix) {
