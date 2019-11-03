@@ -77,7 +77,7 @@ void Task_3_LDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::ve
             if(LT_matrix[j][i] == 0) {
                 continue;
             }
-            double factor = LT_matrix[j][i] / LT_matrix[i][i];
+            factor = LT_matrix[j][i] / LT_matrix[i][i];
             LinesSubstraction(values, j, i, factor);
         }
         double to_unit = LT_matrix[i][i];
@@ -95,7 +95,7 @@ void Task_3_LDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::ve
             if(L_matrix[j][i] == 0) {
                 continue;
             }
-            double factor = L_matrix[j][i] / L_matrix[i][i];
+            factor = L_matrix[j][i] / L_matrix[i][i];
             LinesSubstraction(values, static_cast<size_t>(j), static_cast<size_t>(i), factor);
         }
         double to_unit = L_matrix[i][i];
