@@ -198,11 +198,9 @@ public:
             std::vector<std::vector<double>> values2;
             std::vector<std::vector<double>> L1_matrix;
             std::vector<std::vector<double>> L2_matrix;
-            std::vector<std::vector<double>> P_matrix;
             values1.resize(i);
             L1_matrix.resize(i);
             L2_matrix.resize(i);
-            P_matrix.resize(i);
             U_matrix.resize(i);
             for(size_t k = 0; k < i; ++k) {
                 U_matrix[k].resize(i);
@@ -215,8 +213,6 @@ public:
                 }
                 L1_matrix[j].resize(i);
                 L2_matrix[j].resize(i);
-                P_matrix[j].resize(i);
-                P_matrix[j][j] = 1;
                 values1[j].push_back(rand() + 1);
             }
             LLT_matrix = U_matrix;
@@ -228,7 +224,7 @@ public:
             double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
             std::cout << "LDLT " <<  i << " " << search_time << " ";
             start_time = clock();
-            Task_3_LU(P_matrix, L2_matrix, U_matrix, values2);
+            Task_3_LU(L2_matrix, U_matrix, values2);
             end_time = clock();
             search_time = (end_time - start_time) / CLOCKS_PER_SEC;
             std::cout << "LU " <<  i << " " << search_time << std::endl;
