@@ -12,23 +12,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ba5242b-dda6-4baa-8b66-355aa9ad8179" name="Default Changelist" comment="Add Multiply">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/input_4_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_4.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/1.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.h" beforeDir="false" afterPath="$PROJECT_DIR$/test.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_4.h" beforeDir="false" afterPath="$PROJECT_DIR$/task_4.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task_4.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="372">
+              <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -79,14 +69,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="244" column="9" selection-start-line="237" selection-start-column="9" selection-end-line="244" selection-end-column="9" />
+            <state relative-caret-position="-387">
+              <caret line="243" column="17" selection-start-line="243" selection-start-column="17" selection-end-line="243" selection-end-column="17" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
                 <element signature="e#207#3178#0" />
                 <element signature="e#3184#7225#0" />
                 <element signature="e#7231#8961#0" />
-                <element signature="e#9531#10614#0" />
               </folding>
             </state>
           </provider>
@@ -95,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_3.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="241">
               <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
             </state>
           </provider>
@@ -171,14 +160,14 @@
         <option value="$PROJECT_DIR$/input_4_1.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/input_4_1.txt" />
         <option value="$PROJECT_DIR$/matrix.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/input_4_2.txt" />
         <option value="$PROJECT_DIR$/test.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/task_4.h" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="748" />
     <option name="height" value="1045" />
@@ -271,6 +260,7 @@
       <workItem from="1572845655026" duration="18268000" />
       <workItem from="1572951749187" duration="599000" />
       <workItem from="1572952950173" duration="11580000" />
+      <workItem from="1573028255068" duration="4003000" />
     </task>
     <task id="LOCAL-00001" summary="Till wrong LUP decomposition">
       <created>1571738568518</created>
@@ -290,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132092000" />
+    <option name="totallyTimeSpent" value="136095000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -302,17 +292,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="986" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1920" height="986" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27896994" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28272533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.73493975" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.31686747" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.87710845" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.20120482" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.22650602" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32891566" />
@@ -368,13 +357,6 @@
     <entry file="file://$PROJECT_DIR$/texput.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task_1.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -416,27 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="244" column="9" selection-start-line="237" selection-start-column="9" selection-end-line="244" selection-end-column="9" />
-          <folding>
-            <element signature="e#101#120#0" expanded="true" />
-            <element signature="e#207#3178#0" />
-            <element signature="e#3184#7225#0" />
-            <element signature="e#7231#8961#0" />
-            <element signature="e#9531#10614#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task_3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_4_2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -444,10 +405,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-387">
+          <caret line="243" column="17" selection-start-line="243" selection-start-column="17" selection-end-line="243" selection-end-column="17" />
+          <folding>
+            <element signature="e#101#120#0" expanded="true" />
+            <element signature="e#207#3178#0" />
+            <element signature="e#3184#7225#0" />
+            <element signature="e#7231#8961#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="99" column="45" selection-start-line="99" selection-start-column="45" selection-end-line="99" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/task_4.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="372">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
         </state>
       </provider>
     </entry>
