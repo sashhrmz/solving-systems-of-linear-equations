@@ -8,6 +8,7 @@
 #include "task_1.h"
 #include "task_2.h"
 #include "task_3.h"
+#include "task_4.h"
 
 class Test {
 public:
@@ -228,6 +229,24 @@ public:
             end_time = clock();
             search_time = (end_time - start_time) / CLOCKS_PER_SEC;
             std::cout << "LU " <<  i << " " << search_time << std::endl;
+        }
+    }
+
+    void TestForthTask() {
+        std::vector<std::vector<double>> matrix;
+        std::vector<double> values;
+        ReadMatrixWithValues(matrix, values, "input_4_1.txt");
+        Task_4(matrix, values);
+        for(auto el : values) {
+            std::cout << el << " ";
+        }
+        std::cout << std::endl;
+        matrix.clear();
+        values.clear();
+        ReadMatrixWithValues(matrix, values, "input_4_2.txt");
+        Task_4(matrix, values);
+        for(auto el : values) {
+            std::cout << el << " ";
         }
     }
 
