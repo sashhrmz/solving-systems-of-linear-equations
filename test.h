@@ -12,92 +12,94 @@
 
 class Test {
 public:
-    void TestFirstTask() {
-
-        for(size_t i = 10; i < 4520; i += 400) {
-            std::vector<std::vector<double>> matrix_vector;
-            double temp;
-            std::vector<std::vector<double>> result_vectors;
-            result_vectors.resize(i);
-            for(size_t j = 0; j < i; ++j) {
-                matrix_vector.emplace_back();
-                for(size_t k = 0; k < std::min((j + 2), i); ++k) {
-                    temp = rand() + 1;
-                    matrix_vector[j].push_back(temp);
+    void TestFirstTask(bool time_test, bool first_test_, bool second_test_) {
+        std::ofstream fout("output_first.txt");
+        //Random tests, begin.
+        if (time_test) {
+            for (size_t i = 10; i < 5520; i += 400) {
+                std::vector<std::vector<double>> matrix_vector;
+                double temp;
+                std::vector<std::vector<double>> result_vectors;
+                result_vectors.resize(i);
+                for (size_t j = 0; j < i; ++j) {
+                    matrix_vector.emplace_back();
+                    for (size_t k = 0; k < std::min((j + 2), i); ++k) {
+                        temp = rand() + 1;
+                        matrix_vector[j].push_back(temp);
+                    }
+                    result_vectors[j].resize(i);
+                    result_vectors[j][j] = 1;
                 }
-                result_vectors[j].resize(i);
-                result_vectors[j][j] = 1;
+
+                double start_time = clock();
+
+                Task_1(matrix_vector, result_vectors);
+
+                double end_time = clock();
+                double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+                fout << i << " " << search_time << std::endl;
+            }
+        }
+        //Random tests, end.
+
+        //First test, begin.
+        if(first_test_) {
+            std::vector<std::vector<double>> result_vectors_1;
+            result_vectors_1.resize(4);
+            for (size_t j = 0; j < 4; ++j) {
+                result_vectors_1[j].resize(4);
+                result_vectors_1[j][j] = 1;
             }
 
+            std::vector<std::vector<double>> first_test;
+            ReadMatrix(first_test, "input_1_1.txt");
             double start_time = clock();
 
-            Task_1(matrix_vector, result_vectors);
+            Task_1(first_test, result_vectors_1);
 
             double end_time = clock();
             double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-            std::cout << i << " " << search_time << std::endl;
-        }
 
-        std::vector<std::vector<double>> result_vectors_1;
-        result_vectors_1.resize(4);
-        for(size_t j = 0; j < 4; ++j) {
-            result_vectors_1[j].resize(4);
-            result_vectors_1[j][j] = 1;
-        }
-
-        std::vector<std::vector<double>> first_test =
-                {{-3, 1, 0, 0},
-                {0, 2, 5, 0},
-                {-3, -4, -5, -2},
-                {3, -2, 1, -1}};
-        double start_time = clock();
-
-        std::vector<std::vector<double>> res = Task_1(first_test, result_vectors_1);
-
-        double end_time = clock();
-        double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-
-        std::cout << "first_test" << std::endl;
-        for(auto& vec : res) {
-            for(auto& el : vec) {
-                std::cout << el << " ";
+            fout << "first_test" << std::endl;
+            for (auto &vec : result_vectors_1) {
+                for (auto &el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
             }
-            std::cout << std::endl;
+            fout << search_time << std::endl;
         }
-        std::cout << search_time << std::endl;
-        std::vector<std::vector<double>> result_vectors_2;
-        result_vectors_2.resize(9);
-        for(size_t j = 0; j < 9; ++j) {
-            result_vectors_2[j].resize(9);
-            result_vectors_2[j][j] = 1;
-        }
-        std::vector<std::vector<double>> second_test = {
-                {-5, -5, 0, 0, 0, 0, 0, 0, 0},
-                {3, 3, 0, 0, 0, 0, 0, 0, 0},
-                {-5, 0, -4, 5, 0, 0, 0, 0, 0},
-                {-4, 2, -5, 4, 0, 0, 0, 0, 0},
-                {-3, -4, 1, 4, -4, 3, 0, 0, 0},
-                {-5, -3, 4, 2, 4, -2, 2, 0, 0},
-                {4, 0, -1, -1, 3, 1, 6, -5, 0},
-                {0, 2, 2, -5, -2, 0, 1, 3, -4},
-                {-5, 3, -5, 3, 1, 0, -3, 1, -4}};
+        //First test, end.
 
-        start_time = clock();
-
-        res = Task_1(second_test, result_vectors_2);
-
-        end_time = clock();
-        search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-
-
-        std::cout << "second_test" << std::endl;
-        for(auto& vec : res) {
-            for(auto& el : vec) {
-                std::cout << el << " ";
+        //Second test, begin.
+        if(second_test_) {
+            std::vector<std::vector<double>> result_vectors_2;
+            result_vectors_2.resize(9);
+            for (size_t j = 0; j < 9; ++j) {
+                result_vectors_2[j].resize(9);
+                result_vectors_2[j][j] = 1;
             }
-            std::cout << std::endl;
+            std::vector<std::vector<double>> second_test;
+            ReadMatrix(second_test, "input_1_2.txt");
+            double start_time = clock();
+
+            Task_1(second_test, result_vectors_2);
+
+            double end_time = clock();
+            double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+
+
+            fout << "second_test" << std::endl;
+            for (auto &vec : result_vectors_2) {
+                for (auto &el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << search_time << std::endl;
         }
-        std::cout << search_time << std::endl;
+        //Second test, end.
+        fout << "the end of test";
     }
 
     void TestSecondTask(bool test_flag) {
@@ -189,7 +191,7 @@ public:
     }
 
     void TestThirdTask() {
-        std::vector<std::vector<size_t>> D_matrix = {{}};
+        std::vector<size_t> D_matrix = {};
 
         for (size_t i = 100; i < 2001; i += 100) {
             std::vector<std::vector<double>> LLT_matrix;
@@ -251,6 +253,7 @@ public:
     }
 
 private:
+
     void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<size_t>>& L_matrix,
                     std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
         std::cout << "P matrix : " << std::endl;

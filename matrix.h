@@ -21,7 +21,7 @@ void ReadMatrix(std::vector<std::vector<T>>& matrix, const std::string& name) {
     matrix.resize(n);
     for(int i = 0; i < n; ++i) {
         fin.get();
-        for(int j = 0; fin.peek() != '\n'; ++j) {
+        for(int j = 0; j < 4; ++j) {
             fin >> el;
             matrix[i].push_back(el);
         }

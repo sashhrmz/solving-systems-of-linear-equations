@@ -7,7 +7,7 @@
 
 #include "matrix.h"
 
-std::vector<std::vector<double>> Task_1(std::vector<std::vector<double>>& matrix, std::vector<std::vector<double>>& result_vectors) {
+void Task_1(std::vector<std::vector<double>>& matrix, std::vector<std::vector<double>>& result_vectors) {
 
     for (size_t i = matrix.size() - 1; i > 0; --i) {
         if (fabs(matrix[i][i]) < fabs(matrix[i - 1][i])) {
@@ -27,7 +27,7 @@ std::vector<std::vector<double>> Task_1(std::vector<std::vector<double>>& matrix
 
     for (size_t i = 0; i < matrix.size(); ++i) {
         if (matrix[i][i] == 0) {
-            return {{}};
+            return;
         }
         for (size_t j = i + 1; j < matrix.size(); ++j) {
             if (matrix[j][i] == 0) {
@@ -37,7 +37,6 @@ std::vector<std::vector<double>> Task_1(std::vector<std::vector<double>>& matrix
         }
         result_vectors[i][i] /= matrix[i][i];
     }
-    return result_vectors;
 }
 
 #endif //LABARATORNAYA1_TASK_1_H

@@ -2,7 +2,7 @@
 
 int main() {
     Test test;
-    test.TestForthTask();
+    test.TestFirstTask(false, false, false);
 
     return 0;
 }

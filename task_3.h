@@ -48,7 +48,7 @@ void Task_3_LU(std::vector<std::vector<double>>& L_matrix, std::vector<std::vect
 }
 
 void GaussForLDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::vector<double>>& LT_matrix,
-                  std::vector<std::vector<size_t>>& D_matrix, std::vector<std::vector<double>>& values) {
+                  std::vector<size_t>& D_matrix, std::vector<std::vector<double>>& values) {
     double factor;
     for(size_t i = 0; i < LT_matrix.size(); ++i) {
         for(size_t j = i + 1; j < LT_matrix.size(); ++j) {
@@ -64,7 +64,7 @@ void GaussForLDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::v
         }
     }
 
-    for(auto el : D_matrix[0]) {
+    for(auto el : D_matrix) {
         values[el][0] *= (-1);
     }
 
@@ -86,15 +86,14 @@ void GaussForLDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::v
 }
 
 void Task_3_LDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::vector<double>>& LT_matrix,
-        std::vector<std::vector<size_t>>& D_matrix, std::vector<std::vector<double>>& values) {
+        std::vector<size_t>& D_matrix, std::vector<std::vector<double>>& values) {
     double factor;
     double sqr;
     for (size_t i = 0; i < L_matrix.size(); ++i) {
-        for (size_t j = i; j < L_matrix.size(); ++j) {
-            if(i == j) continue;
+        for (size_t j = i + 1; j < L_matrix.size(); ++j) {
             factor = L_matrix[i][j] / L_matrix[i][i];
             if (L_matrix[i][i] < 0) {
-                D_matrix[0].push_back(i);
+                D_matrix.push_back(i);
                 sqr = -std::sqrt(-L_matrix[i][i]);
             } else {
                 sqr = std::sqrt(L_matrix[i][i]);
@@ -106,6 +105,14 @@ void Task_3_LDLT(std::vector<std::vector<double>>& L_matrix, std::vector<std::ve
             }
         }
     }
+//    for(size_t i = 0; i < U_matrix.size(); ++i) {
+//        for(size_t j = i + 1; j < U_matrix.size(); ++j) {
+//            double factor = U_matrix[j][i] / U_matrix[i][i];
+//            LinesSubstraction(U_matrix, j, i, factor);
+//            L_matrix[j][i] = factor;
+//        }
+//        L_matrix[i][i] =  1;
+//    }
     GaussForLDLT(L_matrix, LT_matrix, D_matrix, values);
 }
 
