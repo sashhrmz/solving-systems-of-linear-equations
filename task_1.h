@@ -20,13 +20,14 @@ void Task_1(std::vector<std::vector<double>>& matrix, std::vector<std::vector<do
         double factor = (matrix[i - 1][i]) / (matrix[i][i]);
 
         LinesSubstraction(matrix, i - 1, i, factor);
-        for(size_t j = matrix.size() - 1; j >= i; --j) {
+        for(size_t j = 0; j < matrix.size(); ++j) {
             result_vectors[i - 1][j] -= factor * result_vectors[i][j];
         }
     }
 
     for (size_t i = 0; i < matrix.size(); ++i) {
         if (matrix[i][i] == 0) {
+            std::cout << "there is no inverse matrix (first task)";
             return;
         }
         for (size_t j = i + 1; j < matrix.size(); ++j) {
@@ -35,7 +36,9 @@ void Task_1(std::vector<std::vector<double>>& matrix, std::vector<std::vector<do
             }
             LinesSubstraction(result_vectors, j, i, matrix[j][i] / matrix[i][i]);
         }
-        result_vectors[i][i] /= matrix[i][i];
+        for(int j = 0; j < matrix.size(); ++j) {
+            result_vectors[i][j] /= matrix[i][i];
+        }
     }
 }
 
