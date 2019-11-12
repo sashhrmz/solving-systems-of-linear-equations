@@ -9,6 +9,7 @@
 #include "task_2.h"
 #include "task_3.h"
 #include "task_4.h"
+#include "task_5.h"
 
 class Test {
 public:
@@ -262,6 +263,15 @@ public:
             }
         }
         fout << "the end of test";
+    }
+
+    void TestFivesTask() {
+        std::ofstream fout("output_fives.txt");
+        for(int i = 500; i < 4010; i += 500) {
+            std::vector<double> x = {1, 1, 1};
+            int t = Task_5(i, x, 0.6);
+            fout << i << " - " << t << " iterations" << std::endl;
+        }
     }
 };
 

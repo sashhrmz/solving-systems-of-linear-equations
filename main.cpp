@@ -7,6 +7,7 @@ int main() {
     test.TestSecondTask(false, false, false);
     test.TestThirdTask(false);
     test.TestForthTask(false);
+    test.TestFivesTask();
 
     return 0;
 }
