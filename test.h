@@ -103,16 +103,10 @@ public:
     }
 
     void TestSecondTask(bool test_flag) {
-        std::vector<std::vector<double>> matrix = {{-3, 4, 2, -3, 2, 3, 4, 3},
-                                                   {-3, 4, -1, 1, -4, -5, -1, 0},
-                                                   {-6, 8, 1, -1, 1, 3, -3, -5},
-                                                   {-12, 16, 2, -3, 4, -2, -3, 4},
-                                                   {-24, 32, 4, -6, 3, -3, -1, -2},
-                                                   {-48, 64, 8, -12, 6, -4, 3, -3},
-                                                   {-96, 128, 16, -24, 12, -8, -1, 4},
-                                                   {2, -1, -3, -4, -5, 4, 1, -5}};
-
-        std::vector<std::vector<double>> result_vector = {{79}, {-51}, {-29}, {33}, {2}, {59}, {149}, {-59}};
+        std::vector<std::vector<double>> matrix;
+        ReadMatrix(matrix, "input_2_1_matrix");
+        std::vector<std::vector<double>> result_vector;
+        ReadMatrix(result_vector, "input_2_1_results");
         matrix.size();
         std::vector<std::vector<double>> L_matrix;
         L_matrix.resize(matrix.size());
@@ -127,7 +121,7 @@ public:
             P_matrix[j][j] = 1;
         }
         Task_2(P_matrix, L_matrix, matrix, result_vector);
-//        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
+
         matrix = {{1, 1, 1, 1, 1, 1, 1, 1, 1},
                   {1, 2, 4, 8, 16, 32, 64, 128, 256},
                   {1, 3, 9, 27, 81, 243, 729, 2187, 6561},
@@ -152,7 +146,7 @@ public:
             P_matrix[j][j] = 1;
         }
         Task_2(P_matrix, L_matrix, matrix, result_vector);
-//        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
+        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
 
         //test plu with random matrix and solutions
        if(test_flag) {
@@ -221,6 +215,7 @@ public:
             LLT_matrix = U_matrix;
             values2 = values1;
 
+
             double start_time = clock();
             Task_3_LDLT(LLT_matrix, L1_matrix, D_matrix, values1);
             double end_time = clock();
@@ -232,6 +227,20 @@ public:
             search_time = (end_time - start_time) / CLOCKS_PER_SEC;
             std::cout << "LU " <<  i << " " << search_time << std::endl;
         }
+//        std::vector<std::vector<double>> a = {{1, 1, 2, 3},
+//                                              {1, 3, -5, -2},
+//                                              {2, -5, 4, -1},
+//                                              {3, -2, -1, -2}};
+//        std::vector<std::vector<double>> v = {{2}, {4}, {-3}, {1}};
+//        std::vector<std::vector<double>> c = {{0, 0, 0, 0},
+//                                              {0, 0, 0, 0},
+//                                              {0, 0, 0, 0},
+//                                              {0, 0, 0, 0}};
+//        std::vector<size_t> d = {};
+//        Task_3_LDLT(a, c, d, v);
+//        for(int i = 0; i < 4; ++i) {
+//            std::cout << v[i][0] << " ";
+//        }
     }
 
     void TestForthTask() {
@@ -254,7 +263,7 @@ public:
 
 private:
 
-    void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<size_t>>& L_matrix,
+    void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<double>>& L_matrix,
                     std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
         std::cout << "P matrix : " << std::endl;
         for(auto vec : P_matrix) {

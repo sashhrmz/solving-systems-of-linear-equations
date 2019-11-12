@@ -62,7 +62,8 @@ void ReadMatrixWithValues(std::vector<std::vector<T>>& matrix, std::vector<T>& v
 
 void LinesSubstraction(std::vector<std::vector<double>>& matrix_, size_t the_number_of_minued_line,
                        size_t the_number_of_subtrahend_line, double the_multiplied_number = 1) {
-    for(size_t i = 0; i < std::min(matrix_[the_number_of_minued_line].size(), matrix_[the_number_of_subtrahend_line].size()); ++i) {
+    size_t t = std::min(matrix_[the_number_of_minued_line].size(), matrix_[the_number_of_subtrahend_line].size());
+    for(size_t i = 0; i < t; ++i) {
         matrix_[the_number_of_minued_line][i] -= the_multiplied_number * matrix_[the_number_of_subtrahend_line][i];
     }
 }

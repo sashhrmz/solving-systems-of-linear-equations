@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/cmake-build-debug/input_4_1.txt">
+		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/cmake-build-debug/inputs/input_4_1.txt">
 			<Option target="labaratornaya1"/>
 		</Unit>
 		<Unit filename="/home/sasha/Sasha/University/VMA/labaratornaya1/main.cpp">
