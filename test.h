@@ -52,7 +52,7 @@ public:
             }
 
             std::vector<std::vector<double>> first_test;
-            ReadMatrix(first_test, "input_1_1.txt");
+            ReadSquareMatrix(first_test, "input_1_1.txt");
             double start_time = clock();
 
             Task_1(first_test, result_vectors_1);
@@ -80,7 +80,7 @@ public:
                 result_vectors_2[j][j] = 1;
             }
             std::vector<std::vector<double>> second_test;
-            ReadMatrix(second_test, "input_1_2.txt");
+            ReadSquareMatrix(second_test, "input_1_2.txt");
             double start_time = clock();
 
             Task_1(second_test, result_vectors_2);
@@ -102,51 +102,59 @@ public:
         fout << "the end of test";
     }
 
-    void TestSecondTask(bool test_flag) {
+    void TestSecondTask(bool first_test_, bool second_test_, bool test_flag) {
+        std::ofstream fout("output_second.txt");
         std::vector<std::vector<double>> matrix;
-        ReadMatrix(matrix, "input_2_1_matrix");
         std::vector<std::vector<double>> result_vector;
-        ReadMatrix(result_vector, "input_2_1_results");
-        matrix.size();
         std::vector<std::vector<double>> L_matrix;
-        L_matrix.resize(matrix.size());
-        for (int j = 0; j < matrix.size(); ++j) {
-            L_matrix[j].resize(matrix.size());
-        }
-
         std::vector<std::vector<double>> P_matrix;
-        P_matrix.resize(matrix.size());
-        for (int j = 0; j < matrix.size(); ++j) {
-            P_matrix[j].resize(matrix.size());
-            P_matrix[j][j] = 1;
-        }
-        Task_2(P_matrix, L_matrix, matrix, result_vector);
 
-        matrix = {{1, 1, 1, 1, 1, 1, 1, 1, 1},
-                  {1, 2, 4, 8, 16, 32, 64, 128, 256},
-                  {1, 3, 9, 27, 81, 243, 729, 2187, 6561},
-                  {1, 4, 16, 64, 256, 1024, 4096, 16384, 65536},
-                  {1, 5, 25, 125, 625, 3125, 15625, 78125, 390625},
-                  {1, 6, 36, 216, 1296, 7776, 46656, 279936, 1679616},
-                  {1, 7, 49, 343, 2401, 16807, 117649, 823543, 5764801},
-                  {1, 8, 64, 512, 4096, 32768, 262144, 2097152, 16777216},
-                  {1, 9, 81, 729, 6561, 59049, 531441, 4782969, 43046721}};
-        result_vector = {{9}, {511}, {9841}, {87381}, {488281}, {2015539}, {6725601}, {19173961}, {48427561}};
-        matrix.size();
-        L_matrix.clear();
-        L_matrix.resize(matrix.size());
-        for (int j = 0; j < matrix.size(); ++j) {
-            L_matrix[j].resize(matrix.size());
+        if(first_test_) {
+            ReadSquareMatrix(matrix, "input_2_1_matrix.txt");
+            ReadLineMatrix(result_vector, "input_2_1_results.txt");
+            L_matrix.resize(matrix.size());
+            for (int j = 0; j < matrix.size(); ++j) {
+                L_matrix[j].resize(matrix.size());
+            }
+
+            P_matrix.resize(matrix.size());
+            for (int j = 0; j < matrix.size(); ++j) {
+                P_matrix[j].resize(matrix.size());
+                P_matrix[j][j] = 1;
+            }
+            Task_2(P_matrix, L_matrix, matrix, result_vector);
+            fout << "first test" << std::endl;
+            for (auto el : result_vector) {
+                fout << el[0] << " ";
+            }
+            fout << std::endl;
         }
 
-        P_matrix.clear();
-        P_matrix.resize(matrix.size());
-        for (int j = 0; j < matrix.size(); ++j) {
-            P_matrix[j].resize(matrix.size());
-            P_matrix[j][j] = 1;
+        matrix.clear();
+        result_vector.clear();
+
+        if(second_test_) {
+            ReadSquareMatrix(matrix, "input_2_2_matrix.txt");
+            ReadLineMatrix(result_vector, "input_2_2_results.txt");
+            L_matrix.clear();
+            L_matrix.resize(matrix.size());
+            for (int j = 0; j < matrix.size(); ++j) {
+                L_matrix[j].resize(matrix.size());
+            }
+
+            P_matrix.clear();
+            P_matrix.resize(matrix.size());
+            for (int j = 0; j < matrix.size(); ++j) {
+                P_matrix[j].resize(matrix.size());
+                P_matrix[j][j] = 1;
+            }
+            Task_2(P_matrix, L_matrix, matrix, result_vector);
+            fout << "second test" << std::endl;
+            for (auto el : result_vector) {
+                fout << el[0] << " ";
+            }
+            fout << std::endl;
         }
-        Task_2(P_matrix, L_matrix, matrix, result_vector);
-        OutputPLUV(P_matrix, L_matrix, matrix, result_vector);
 
         //test plu with random matrix and solutions
        if(test_flag) {
@@ -182,117 +190,78 @@ public:
                 Task_2(P_matrix, L_matrix, matrix_vector, result_vector);
             }
         }
+       fout << "the end of test";
     }
 
-    void TestThirdTask() {
-        std::vector<size_t> D_matrix = {};
+    void TestThirdTask(bool test_flag) {
+        std::ofstream fout("output_third.txt");
+        if(test_flag) {
+            std::vector<size_t> D_matrix = {};
 
-        for (size_t i = 100; i < 2001; i += 100) {
-            std::vector<std::vector<double>> LLT_matrix;
-            std::vector<std::vector<double>> U_matrix;
-            double temp;
-            std::vector<std::vector<double>> values1;
-            std::vector<std::vector<double>> values2;
-            std::vector<std::vector<double>> L1_matrix;
-            std::vector<std::vector<double>> L2_matrix;
-            values1.resize(i);
-            L1_matrix.resize(i);
-            L2_matrix.resize(i);
-            U_matrix.resize(i);
-            for(size_t k = 0; k < i; ++k) {
-                U_matrix[k].resize(i);
-            }
-            for (size_t j = 0; j < i; ++j) {
-                for (size_t k = j; k < i; ++k) {
-                    temp = rand() + 1;
-                    U_matrix[k][j] = temp;
-                    U_matrix[j][k] = temp;
+            for (size_t i = 100; i < 2001; i += 100) {
+                std::vector<std::vector<double>> LLT_matrix;
+                std::vector<std::vector<double>> U_matrix;
+                double temp;
+                std::vector<std::vector<double>> values1;
+                std::vector<std::vector<double>> values2;
+                std::vector<std::vector<double>> L1_matrix;
+                std::vector<std::vector<double>> L2_matrix;
+                values1.resize(i);
+                L1_matrix.resize(i);
+                L2_matrix.resize(i);
+                U_matrix.resize(i);
+                for (size_t k = 0; k < i; ++k) {
+                    U_matrix[k].resize(i);
                 }
-                L1_matrix[j].resize(i);
-                L2_matrix[j].resize(i);
-                values1[j].push_back(rand() + 1);
+                for (size_t j = 0; j < i; ++j) {
+                    for (size_t k = j; k < i; ++k) {
+                        temp = rand() + 1;
+                        U_matrix[k][j] = temp;
+                        U_matrix[j][k] = temp;
+                    }
+                    L1_matrix[j].resize(i);
+                    L2_matrix[j].resize(i);
+                    values1[j].push_back(rand() + 1);
+                }
+                LLT_matrix = U_matrix;
+                values2 = values1;
+
+
+                double start_time = clock();
+                Task_3_LDLT(LLT_matrix, L1_matrix, D_matrix, values1);
+                double end_time = clock();
+                double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+                fout << "LDLT " << i << " " << search_time << " ";
+                start_time = clock();
+                Task_3_LU(L2_matrix, U_matrix, values2);
+                end_time = clock();
+                search_time = (end_time - start_time) / CLOCKS_PER_SEC;
+                fout << "LU " << i << " " << search_time << std::endl;
             }
-            LLT_matrix = U_matrix;
-            values2 = values1;
-
-
-            double start_time = clock();
-            Task_3_LDLT(LLT_matrix, L1_matrix, D_matrix, values1);
-            double end_time = clock();
-            double search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-            std::cout << "LDLT " <<  i << " " << search_time << " ";
-            start_time = clock();
-            Task_3_LU(L2_matrix, U_matrix, values2);
-            end_time = clock();
-            search_time = (end_time - start_time) / CLOCKS_PER_SEC;
-            std::cout << "LU " <<  i << " " << search_time << std::endl;
         }
-//        std::vector<std::vector<double>> a = {{1, 1, 2, 3},
-//                                              {1, 3, -5, -2},
-//                                              {2, -5, 4, -1},
-//                                              {3, -2, -1, -2}};
-//        std::vector<std::vector<double>> v = {{2}, {4}, {-3}, {1}};
-//        std::vector<std::vector<double>> c = {{0, 0, 0, 0},
-//                                              {0, 0, 0, 0},
-//                                              {0, 0, 0, 0},
-//                                              {0, 0, 0, 0}};
-//        std::vector<size_t> d = {};
-//        Task_3_LDLT(a, c, d, v);
-//        for(int i = 0; i < 4; ++i) {
-//            std::cout << v[i][0] << " ";
-//        }
+        fout << "the end of test";
     }
 
-    void TestForthTask() {
-        std::vector<std::vector<double>> matrix;
-        std::vector<double> values;
-        ReadMatrixWithValues(matrix, values, "input_4_1.txt");
-        Task_4(matrix, values);
-        for(auto el : values) {
-            std::cout << el << " ";
-        }
-        std::cout << std::endl;
-        matrix.clear();
-        values.clear();
-        ReadMatrixWithValues(matrix, values, "input_4_2.txt");
-        Task_4(matrix, values);
-        for(auto el : values) {
-            std::cout << el << " ";
-        }
-    }
-
-private:
-
-    void OutputPLUV(std::vector<std::vector<double>>& P_matrix, std::vector<std::vector<double>>& L_matrix,
-                    std::vector<std::vector<double>>& U_matrix, std::vector<std::vector<double>>& values) {
-        std::cout << "P matrix : " << std::endl;
-        for(auto vec : P_matrix) {
-            for(auto el : vec) {
-                std::cout << el << " ";
+    void TestForthTask(bool test_flag) {
+        std::ofstream fout("output_fourth.txt");
+        if(test_flag) {
+            std::vector<std::vector<double>> matrix;
+            std::vector<double> values;
+            ReadMatrixWithValues(matrix, values, "input_4_1.txt");
+            Task_4(matrix, values);
+            for (auto el : values) {
+                fout << el << " ";
             }
-            std::cout << std::endl;
-        }
-        std::cout << "L matrix : " << std::endl;
-        for(auto vec : L_matrix) {
-            for(auto el : vec) {
-                std::cout << el << " ";
+            fout << std::endl;
+            matrix.clear();
+            values.clear();
+            ReadMatrixWithValues(matrix, values, "input_4_2.txt");
+            Task_4(matrix, values);
+            for (auto el : values) {
+                fout << el << " ";
             }
-            std::cout << std::endl;
         }
-        std::cout << "U matrix : " << std::endl;
-        for(auto vec : U_matrix) {
-            for(auto el : vec) {
-                std::cout << el << " ";
-            }
-            std::cout << std::endl;
-        }
-        std::cout << "Solution : " << std::endl;
-        for(auto vec : values) {
-            for(auto el : vec) {
-                std::cout << el << " ";
-            }
-            std::cout << std::endl;
-        }
+        fout << "the end of test";
     }
 };
 

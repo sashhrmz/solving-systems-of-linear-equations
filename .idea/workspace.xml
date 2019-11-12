@@ -13,20 +13,21 @@
   <component name="ChangeListManager">
     <list default="true" id="0ba5242b-dda6-4baa-8b66-355aa9ad8179" name="Default Changelist" comment="Add Multiply">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.zip" beforeDir="false" afterPath="$PROJECT_DIR$/1.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/labaratornaya1.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input_1_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input_1_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input_4_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/input_4_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_1_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_1_2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_matrix.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_results.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_4_1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/inputs/input_4_2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/labaratornaya1.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output_first.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/output_first.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/outputs/output_first.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/outputs/output_second.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_3.h" beforeDir="false" afterPath="$PROJECT_DIR$/task_3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.h" beforeDir="false" afterPath="$PROJECT_DIR$/test.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -43,16 +44,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/task_3.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -60,17 +52,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="152">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_fourth.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="240" column="28" selection-start-line="240" selection-start-column="28" selection-end-line="240" selection-end-column="28" />
+            <state relative-caret-position="540">
+              <caret line="260" column="9" selection-start-line="260" selection-start-column="9" selection-end-line="260" selection-end-column="9" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
               </folding>
@@ -79,14 +76,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matrix.h">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_third.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task_2.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1273">
-              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-              <folding>
-                <element signature="e#105#122#0" expanded="true" />
-                <element signature="e#229#241#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-304">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/task_1.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -131,13 +138,17 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/output_first.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1.txt" />
         <option value="$PROJECT_DIR$/task_2.h" />
-        <option value="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_matrix.txt" />
         <option value="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_results.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/task_3.h" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_matrix.txt" />
         <option value="$PROJECT_DIR$/matrix.h" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/input_2_1_matrix.txt" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/input_2_1_results.txt" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/input_2_2_matrix.txt" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/input_2_2_results.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/test.h" />
-        <option value="$PROJECT_DIR$/task_3.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -164,18 +175,6 @@
               <item name="labaratornaya1" type="462c0819:PsiDirectoryNode" />
               <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="labaratornaya1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labaratornaya1" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="inputs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="labaratornaya1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="labaratornaya1" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="outputs" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -192,9 +191,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cmake-build-debug/outputs" />
-      <recent name="$PROJECT_DIR$/cmake-build-debug/inputs" />
       <recent name="$PROJECT_DIR$/cmake-build-debug" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/inputs" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug/CMakeFiles" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug/inputs" />
+      <recent name="$PROJECT_DIR$/cmake-build-debug/outputs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,7 +251,7 @@
       <workItem from="1572952950173" duration="11580000" />
       <workItem from="1573028255068" duration="16969000" />
       <workItem from="1573121048958" duration="6385000" />
-      <workItem from="1573409157091" duration="17991000" />
+      <workItem from="1573409157091" duration="25686000" />
     </task>
     <task id="LOCAL-00001" summary="Till wrong LUP decomposition">
       <created>1571738568518</created>
@@ -270,7 +271,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173437000" />
+    <option name="totallyTimeSpent" value="181132000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -284,22 +285,22 @@
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="986" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29077253" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29077253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.5518072" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.76506025" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.19638555" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.36746988" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.42048192" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.097590365" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.045783132" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32891566" />
-      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.3421687" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -359,18 +360,15 @@
           <line>47</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/task_2.h</url>
+          <line>9</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="LT_matrix[0][3]" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/matrix.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/documentation.txt" />
     <entry file="file:///usr/include/c++/7/ext/new_allocator.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -390,7 +388,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_4_3.txt" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_4_1.txt">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_4_1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
@@ -404,102 +402,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_1_1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/task_1.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/outputs/output_first.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_4_2.txt">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_4_2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_1_2.txt">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_1_2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_matrix.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/inputs/input_2_1_results.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/outputs/output_second.txt">
+    <entry file="file://$PROJECT_DIR$/matrix.cpp">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="99" column="9" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_first.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_1_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+          <folding>
+            <element signature="e#105#122#0" expanded="true" />
+            <element signature="e#229#241#0" expanded="true" />
+            <element signature="e#596#608#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_2_2_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_2_2_matrix.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_second.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_2_1_matrix.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/input_2_1_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/task_2.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        <state relative-caret-position="-304">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_1.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1273">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
-          <folding>
-            <element signature="e#105#122#0" expanded="true" />
-            <element signature="e#229#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_third.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="240" column="28" selection-start-line="240" selection-start-column="28" selection-end-line="240" selection-end-column="28" />
+        <state relative-caret-position="540">
+          <caret line="260" column="9" selection-start-line="260" selection-start-column="9" selection-end-line="260" selection-end-column="9" />
           <folding>
             <element signature="e#101#120#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task_3.h">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="99" column="9" lean-forward="true" selection-start-line="99" selection-start-column="9" selection-end-line="99" selection-end-column="9" />
+        <state relative-caret-position="152">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/output_fourth.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

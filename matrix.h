@@ -13,7 +13,7 @@
 #include <fstream>
 
 template <typename T>
-void ReadMatrix(std::vector<std::vector<T>>& matrix, const std::string& name) {
+void ReadSquareMatrix(std::vector<std::vector<T>>& matrix, const std::string& name) {
     std::ifstream fin(name);
     double el;
     int n;
@@ -21,7 +21,23 @@ void ReadMatrix(std::vector<std::vector<T>>& matrix, const std::string& name) {
     matrix.resize(n);
     for(int i = 0; i < n; ++i) {
         fin.get();
-        for(int j = 0; j < 4; ++j) {
+        for(int j = 0; j < n; ++j) {
+            fin >> el;
+            matrix[i].push_back(el);
+        }
+    }
+}
+
+template <typename T>
+void ReadLineMatrix(std::vector<std::vector<T>>& matrix, const std::string& name) {
+    std::ifstream fin(name);
+    double el;
+    int n;
+    fin >> n;
+    matrix.resize(n);
+    for(int i = 0; i < n; ++i) {
+        fin.get();
+        for(int j = 0; j < 1; ++j) {
             fin >> el;
             matrix[i].push_back(el);
         }
