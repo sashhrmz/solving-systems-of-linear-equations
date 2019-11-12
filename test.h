@@ -125,6 +125,28 @@ public:
             }
             Task_2(P_matrix, L_matrix, matrix, result_vector);
             fout << "first test" << std::endl;
+            fout << "P-matrix" << std::endl;
+            for(auto vec : P_matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "L-matrix" << std::endl;
+            for(auto vec : L_matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "U-matrix" << std::endl;
+            for(auto vec : matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "values" << std::endl;
             for (auto el : result_vector) {
                 fout << el[0] << " ";
             }
@@ -151,6 +173,28 @@ public:
             }
             Task_2(P_matrix, L_matrix, matrix, result_vector);
             fout << "second test" << std::endl;
+            fout << "P-matrix" << std::endl;
+            for(auto vec : P_matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "L-matrix" << std::endl;
+            for(auto vec : L_matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "U-matrix" << std::endl;
+            for(auto vec : matrix) {
+                for(auto el : vec) {
+                    fout << el << " ";
+                }
+                fout << std::endl;
+            }
+            fout << "values" << std::endl;
             for (auto el : result_vector) {
                 fout << el[0] << " ";
             }
@@ -265,7 +309,7 @@ public:
         fout << "the end of test";
     }
 
-    void TestFivesTask() {
+    void TestFifthTask() {
         std::ofstream fout("output_fives.txt");
         for(int i = 500; i < 4010; i += 500) {
             std::vector<double> x = {1, 1, 1};
